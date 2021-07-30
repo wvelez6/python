@@ -12,7 +12,12 @@ def days_to_units(num_of_days):
 
 
 user_input = input("Please enter a number of days you want in hours\n")
-user_input_number = int(user_input)
 
-calculated_value = days_to_units(user_input_number)
-print(calculated_value)
+if user_input.isdigit():
+
+    user_input_number = int(user_input)
+
+    calculated_value = days_to_units(user_input_number)
+    print(calculated_value)
+else:
+    print("Your input is not a number. Don't ruin my program")
