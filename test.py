@@ -1,16 +1,18 @@
-calculate_unit = 24
-unit_name = "hours"
+calculation_to_units = 24
+name_of_unit = "hours"
 
 
-def days_to_hours(num_of_days):
+def days_to_units(num_of_days):
     if num_of_days > 0:
-        return f"{num_of_days} are {num_of_days * calculate_unit} {unit_name}"
+        return f"{num_of_days} days are {num_of_days * calculation_to_units} {name_of_unit}"
+    elif num_of_days == 0:
+        return " You entered a zero, please enter a valid number of days"
     else:
-        return "You entered an invalid number."
+        return "You entered a negative number"
 
 
-user_input = input("Please enter the amount of days you want converted to hours.\n")
+user_input = input("Please enter a number of days you want in hours\n")
 user_input_number = int(user_input)
-return_data = days_to_hours(user_input_number)
 
-print(return_data)
+calculated_value = days_to_units(user_input_number)
+print(calculated_value)
